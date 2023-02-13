@@ -2,9 +2,7 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    // "stylelint.vscode-stylelint",
-    // "lokalise.i18n-ally",
-    // "antfu.iconify",
     "mikestead.dotenv",
+    "infeng.vscode-react-typescript",
   ]
 }
