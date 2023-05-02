@@ -142,9 +142,6 @@ export const TableContent =styled.section`
     }
 `
 
-
-
-
 export const SaveFile = styled.div`
     margin-left: 24px;
 
@@ -169,5 +166,23 @@ export const SaveFile = styled.div`
         width: 165px;
         height: 48px;
         margin-bottom: 25px;
+    }
+`
+
+export const SaveAnnex = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+
+    Button {
+        margin: 0px;
+        height: 10px;
+
+        p {
+            font-weight: 600;
+            margin-left: 5px;
+            color: rgba(47, 128, 237, 1);
+            text-decoration: underline;
+        }
     }
 `

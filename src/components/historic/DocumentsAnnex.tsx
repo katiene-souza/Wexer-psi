@@ -1,5 +1,5 @@
 import { Card } from "@/Utils/card/Card"
-import { BoxLine, Container, Image, Main } from "./styled"
+import { BoxLine, Container, Image, Main, SaveAnnex } from "./styled"
 import { Button } from "@/Utils/button/Button"
 import { OpenPopupMenu } from "./PopupMenu"
 
@@ -7,6 +7,7 @@ import AnnexElipse from "@/assets/icons/annexElipse"
 import Points from "@/assets/icons/points"
 
 import { useState } from "react"
+import Pdf from "@/assets/pdf"
 
 export const DocumentsAnnex = () => {
     const [documentsAnnex, setDocumentsAnnex] = useState(false)
@@ -15,10 +16,10 @@ export const DocumentsAnnex = () => {
 
     return (
         <Container >
-             {documentsAnnex && <OpenPopupMenu isOpen={documentsAnnex} onClose={() => setDocumentsAnnex(false)} />}
+            {documentsAnnex && <OpenPopupMenu isOpen={documentsAnnex} onClose={() => setDocumentsAnnex(false)} />}
             <Card className="purple">
                 <Image>
-                    <BoxLine className="purple"/>
+                    <BoxLine className="purple" />
                     <AnnexElipse />
                 </Image>
                 <Main>
@@ -28,8 +29,15 @@ export const DocumentsAnnex = () => {
                         <h2>22 de setembro 2022</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum temporibus incidunt odio sed dolorem est mollitia quaerat exercitationem recusandae tenetur. Ullam doloremque illo perspiciatis soluta, qui odit inventore ab itaque!</p>
+                    <SaveAnnex>
+                        <p>02 anexos</p>
+                        <Button type="button">
+                            <Pdf />
+                            <p>arquivoteste.pdf</p>
+                        </Button>
+                    </SaveAnnex>
                 </Main>
-            </Card> 
+            </Card>
         </Container>
     )
 }
