@@ -1,10 +1,12 @@
 import { Card } from "@/Utils/card/Card"
 import { Section } from "./styled"
 import { Button } from "@/Utils/button/Button"
-import Edit from "@/assets/icons/edit"
-import { useEffect, useState } from "react"
-import { NotesModal } from "../formsModal/NotesModal"
 import { getPatientData } from "@/services/getPatient"
+import { NotesModal } from "../formsModal/NotesModal"
+
+import { useEffect, useState } from "react"
+
+import Edit from "@/assets/icons/edit"
 
 export const Notes = () => {
     const [isNotesOpen, setNotesOpen] = useState(false);

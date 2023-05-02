@@ -1,11 +1,11 @@
 import { Card } from "@/Utils/card/Card"
-import SessionElipse from "@/assets/icons/sessionElipse"
 import { BoxLine, Container, Image, Main } from "./styled"
-import Points from "@/assets/icons/points"
 import { Button } from "@/Utils/button/Button"
-import { useState } from "react"
 import { OpenPopupMenu } from "./PopupMenu"
+import { useState } from "react"
 
+import SessionElipse from "@/assets/icons/sessionElipse"
+import Points from "@/assets/icons/points"
 
 export const Sessions = () => {
     const [session, setSession] = useState(false)

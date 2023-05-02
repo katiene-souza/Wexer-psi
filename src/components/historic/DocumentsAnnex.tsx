@@ -1,15 +1,14 @@
 import { Card } from "@/Utils/card/Card"
 import { BoxLine, Container, Image, Main } from "./styled"
 import { Button } from "@/Utils/button/Button"
+import { OpenPopupMenu } from "./PopupMenu"
 
 import AnnexElipse from "@/assets/icons/annexElipse"
 import Points from "@/assets/icons/points"
-import { useState } from "react"
-import { OpenPopupMenu } from "./PopupMenu"
 
+import { useState } from "react"
 
 export const DocumentsAnnex = () => {
-
     const [documentsAnnex, setDocumentsAnnex] = useState(false)
 
     const showDocumentsAnnex = () => setDocumentsAnnex(!documentsAnnex)

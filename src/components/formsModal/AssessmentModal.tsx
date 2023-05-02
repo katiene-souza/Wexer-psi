@@ -1,11 +1,12 @@
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, Content, ContentForm } from "./styled"
 import { Input } from "@/Utils/input/InputControl"
+import { Button } from "@/Utils/button/Button"
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
-import { Button } from "@/Utils/button/Button"
+
 
 type Props = {
   isOpen: boolean

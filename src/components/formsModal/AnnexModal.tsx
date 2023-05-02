@@ -1,11 +1,12 @@
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, ContentForm } from "./styled"
 import { Button } from "@/Utils/button/Button"
+import { Input } from "@/Utils/input/InputControl"
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
-import { Input } from "@/Utils/input/InputControl"
+
 
 
 type Props = {

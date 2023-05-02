@@ -12,8 +12,6 @@ type Props = {
     children?: React.ReactNode
   }
  
-
-
   export const Modal = ({ isOpen, onClose, clickOutside = true, children }: Props) => {
 
   const container = useRef<HTMLDivElement>(null);

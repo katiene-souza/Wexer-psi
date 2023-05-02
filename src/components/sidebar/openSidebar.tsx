@@ -7,7 +7,6 @@ import { Button } from "@/Utils/button/Button"
 import { Container } from "./styled"
 
 
-
 type Props = {
   isOpen: boolean
   onClose: () => void

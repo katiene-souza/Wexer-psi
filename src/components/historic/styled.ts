@@ -47,11 +47,6 @@ export const Main = styled.main`
     position: relative;
     padding: 24px;
 
-    div {
-        line-height: 10px;
-        padding-top: 16px;   
-    }
-
     Button {
         float: right;
         margin: 15px 5px;
@@ -59,7 +54,7 @@ export const Main = styled.main`
 
     h1 {
         font-size: 18px;    
-       
+        padding-top: 16px;   
     }
 
     h2 {
@@ -108,4 +103,71 @@ export const ContainerPopup = styled.div<{isOpen: boolean}>`
 .greenPopup {
     color: rgba(0, 153, 93, 1);  
 }
+`
+
+
+export const TableData = styled.div`
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 8px;
+`
+
+export const TableContent =styled.section`
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    height: 40px;
+
+    p {
+        padding-left: 16px;
+        color: rgba(79, 79, 79, 1);
+    }
+   
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            color: rgba(1, 120, 73, 1);
+            background-color: rgba(197, 242, 224, 1);
+            border-radius: 16px;
+            padding: 2px 20px;
+        }
+
+        Button {
+            padding: 0px;
+            margin-top: 25px;
+        }
+    }
+`
+
+
+
+
+export const SaveFile = styled.div`
+    margin-left: 24px;
+
+    p{
+        color: rgba(79, 79, 79, 1);
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+   
+    Button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background-color: rgba(245, 245, 245, 1);
+        border-radius: 8px;
+        color: rgba(158, 158, 158, 1);
+        width: 165px;
+        height: 48px;
+        margin-bottom: 25px;
+    }
 `

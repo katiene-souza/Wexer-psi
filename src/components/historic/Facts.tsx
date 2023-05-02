@@ -1,15 +1,13 @@
 import { Card } from "@/Utils/card/Card"
-import EssentialElipse from "@/assets/icons/essentialElipse"
 import { BoxLine, Container, Image, Main } from "./styled"
-import Points from "@/assets/icons/points"
 import { Button } from "@/Utils/button/Button"
-import { useState } from "react"
 import { OpenPopupMenu } from "./PopupMenu"
+import { useState } from "react"
 
-
+import EssentialElipse from "@/assets/icons/essentialElipse"
+import Points from "@/assets/icons/points"
 
 export const Facts = () => {
-
     const [facts, setfacts] = useState(false)
 
     const showFacts = () => setfacts(!facts)

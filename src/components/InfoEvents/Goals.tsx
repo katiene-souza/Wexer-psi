@@ -1,11 +1,12 @@
 import { Card } from "@/Utils/card/Card"
 import { Section } from "./styled"
 import { Button } from "@/Utils/button/Button"
-import Edit from "@/assets/icons/edit"
-import { GoalsModal } from "../formsModal/GoalsModal"
-import { useEffect, useState } from "react"
 import { getPatientData } from "@/services/getPatient"
+import { GoalsModal } from "../formsModal/GoalsModal"
 
+import { useEffect, useState } from "react"
+
+import Edit from "@/assets/icons/edit"
 
 export const Goals = () => {
     const [isGoalsOpen, setGoalsOpen] = useState(false);

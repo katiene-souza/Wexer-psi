@@ -9,11 +9,11 @@
     personalAnnotations: string,
 }
 
-type TimeLine = {
+type sessionCard = {
   patientId: string,
+  _id: string,
   occurrences: [],
   serviceName: string,
-  _id: string,
   createdOn:string,
   modifiedOn: string,
 }

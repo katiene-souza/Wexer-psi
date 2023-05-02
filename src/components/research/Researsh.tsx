@@ -1,7 +1,8 @@
-import { Button } from "@/Utils/button/Button"
-import Search from "@/assets/icons/search"
-import { Section } from "./styled"
 import { Card } from "@/Utils/card/Card"
+import { Button } from "@/Utils/button/Button"
+import { Section } from "./styled"
+
+import Search from "@/assets/icons/search"
 
 export const Research = () => {
     

@@ -1,11 +1,12 @@
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, ContentForm } from "./styled"
+import { Input } from "@/Utils/input/InputControl"
+import { Button } from "@/Utils/button/Button"
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
-import { Input } from "@/Utils/input/InputControl"
-import { Button } from "@/Utils/button/Button"
+
 
 
 type Props = {
@@ -46,7 +47,7 @@ export const FactsModal = ({ isOpen, onClose }: Props) => {
                 <Input type="date" name="date" label="Data*" control={control} />
                 {errors?.date && <p className="errorYup">{errors.date.message}</p>}
               </div>
-              <div>
+              <div style={{ width: "100%" }}>
                 <Input type="text" name="title" label="Título*" placeholder="Digite" control={control} />
                 {errors?.title && <p className="errorYup">{errors.title.message}</p>}
               </div>

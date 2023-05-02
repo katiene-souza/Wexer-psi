@@ -1,7 +1,6 @@
 import { Card } from "@/Utils/card/Card"
 import { FilterContainer, Main, Section, Service } from "./styled"
 import { Button } from "@/Utils/button/Button"
-import { useState } from "react"
 import { SessionModal } from "../formsModal/SessionModal"
 import { FactsModal } from "../formsModal/FactsModal"
 import { AnnexModal } from "../formsModal/AnnexModal"
@@ -15,12 +14,7 @@ import Annex from "@/assets/icons/annex"
 import Assessment from "@/assets/icons/assessment"
 import Arrow from "@/assets/icons/arrow"
 
-
-
-
-
-
-
+import { useState } from "react"
 
 export const NewHistory = () => {
     const [isSectionOpen, setSectionOpen] = useState(false);
@@ -92,7 +86,6 @@ export const NewHistory = () => {
                     </select>
                     <Arrow />
                 </label>
-                
             </FilterContainer>
         </>
     )

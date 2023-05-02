@@ -1,7 +1,5 @@
 import api from "./api";
 
-
-
 export const getPatientData = async (): Promise<Patient>  => {
     const token = localStorage.getItem('jwt');
 

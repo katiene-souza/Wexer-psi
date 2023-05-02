@@ -5,4 +5,5 @@ export const Knob = styled.button`
         align-items: center;
         background: none;
         border: none;
+        cursor: pointer;
 `

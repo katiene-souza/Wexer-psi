@@ -1,7 +1,7 @@
 
 
 import { Control, useController } from "react-hook-form"
-import { ContainerInput } from "../Input2/styled"
+import { ContainerInput } from "./styled"
 
 
 type Props = {

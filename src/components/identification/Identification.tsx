@@ -1,13 +1,13 @@
 import { Section, Title } from "./styled"
 import { Card } from "@/Utils/card/Card"
+import { getPatientData } from "@/services/getPatient"
 
 import People from "@/assets/icons/people"
 import Calender from "@/assets/icons/calender"
 import Profession from "@/assets/icons/profession"
 import School from "@/assets/icons/school"
-import { useEffect, useState } from "react"
-import { getPatientData } from "@/services/getPatient"
 
+import { useEffect, useState } from "react"
 
 
 export const Identification = () => {
