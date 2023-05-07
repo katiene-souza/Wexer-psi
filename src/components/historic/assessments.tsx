@@ -1,5 +1,5 @@
 import { Card } from "@/Utils/card/Card"
-import { BoxLine, Container, Image, Main, SaveContet, SaveFile, TableContent, TableData } from "./styled"
+import { BoxLine, Container, Image, Main, SaveFile, TableContent, TableData } from "./styled"
 import { Button } from "@/Utils/button/Button"
 import { OpenPopupMenu } from "./PopupMenu"
 
@@ -9,7 +9,7 @@ import Points from "@/assets/icons/points"
 import { useState } from "react"
 import Edit from "@/assets/icons/edit"
 import EyeIcon from "@/assets/icons/eyeIcon"
-import Session from "@/assets/icons/session"
+
 
 export const Assessments = () => {
     const [assessments, setAssessments] = useState(false);

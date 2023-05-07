@@ -9,10 +9,23 @@ import Points from "@/assets/icons/points"
 import { useState } from "react"
 import Pdf from "@/assets/pdf"
 
-export const DocumentsAnnex = () => {
+type Props = {
+    title: string;
+    date: string;
+    content: string;
+    file: any;
+}
+
+export const DocumentsAnnex = ({ title, content, date, file }: Props) => {
     const [documentsAnnex, setDocumentsAnnex] = useState(false)
 
     const showDocumentsAnnex = () => setDocumentsAnnex(!documentsAnnex)
+
+    const dataFormatada = new Intl.DateTimeFormat('pt-Br', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    }).format(new Date(date))
 
     return (
         <Container >
@@ -25,15 +38,15 @@ export const DocumentsAnnex = () => {
                 <Main>
                     <Button type="button" onClick={showDocumentsAnnex}><Points /></Button>
                     <div>
-                        <h1>Documentos importantes</h1>
-                        <h2>22 de setembro 2022</h2>
+                        <h1>{title}</h1>
+                        <h2>{dataFormatada}</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum temporibus incidunt odio sed dolorem est mollitia quaerat exercitationem recusandae tenetur. Ullam doloremque illo perspiciatis soluta, qui odit inventore ab itaque!</p>
+                    <p>{content}</p>
                     <SaveAnnex>
                         <p>02 anexos</p>
                         <Button type="button">
                             <Pdf />
-                            <p>arquivoteste.pdf</p>
+                            <p>{file[0]?.filename}</p>
                         </Button>
                     </SaveAnnex>
                 </Main>

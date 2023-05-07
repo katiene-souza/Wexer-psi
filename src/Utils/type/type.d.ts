@@ -9,11 +9,28 @@
     personalAnnotations: string,
 }
 
-type sessionCard = {
+type OcurrencesCard = {
+  type: string;
   patientId: string,
   _id: string,
   occurrences: [],
-  serviceName: string,
-  createdOn:string,
+  serviceName?: string,
+  title: string;
+  content: string;
+  files: [];
+  createdOn: string,
   modifiedOn: string,
+}
+
+
+type Timeline = {
+  type: string;
+  timelineId: string,
+  title: string,
+  content: string;
+}
+
+type InfoCard = {
+  title: string;
+
 }

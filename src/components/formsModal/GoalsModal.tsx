@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, ContentForm } from "./styled"
 import { Button } from "@/Utils/button/Button"

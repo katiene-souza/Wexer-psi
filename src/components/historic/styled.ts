@@ -186,3 +186,7 @@ export const SaveAnnex = styled.div`
         }
     }
 `
+
+export const ReadMore = styled.div`
+ display: flex;
+`

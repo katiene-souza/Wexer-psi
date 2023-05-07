@@ -6,11 +6,25 @@ import { useState } from "react"
 
 import SessionElipse from "@/assets/icons/sessionElipse"
 import Points from "@/assets/icons/points"
+import { Link } from "react-router-dom"
 
-export const Sessions = () => {
+type Props = {
+    title: string;
+    date: string;
+    content: string;
+}
+
+
+export const Sessions = ({title, date, content}: Props) => {
     const [session, setSession] = useState(false)
 
     const showSession= () => setSession(!session)
+
+    const dataFormatada = new Intl.DateTimeFormat('pt-Br', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    }).format(new Date(date))
 
     return (
 
@@ -24,10 +38,10 @@ export const Sessions = () => {
                 <Main>
                     <Button type="button" onClick={showSession}><Points /></Button>
                     <div>
-                        <h1>Sessão</h1>
-                        <h2>22 de setembro 2022</h2>
+                        <h1>{title}</h1>
+                        <h2>{dataFormatada}</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum temporibus incidunt odio sed dolorem est mollitia quaerat exercitationem recusandae tenetur. Ullam doloremque illo perspiciatis soluta, qui odit inventore ab itaque!</p>
+                        <p>{content} <Link to="/review"><p>Ver mais</p></Link></p>
                 </Main>
             </Card>
         </Container>

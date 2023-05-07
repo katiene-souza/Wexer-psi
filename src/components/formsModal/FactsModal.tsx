@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, ContentForm } from "./styled"
 import { Input } from "@/Utils/input/InputControl"
@@ -6,6 +7,8 @@ import { Button } from "@/Utils/button/Button"
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
+import api from "@/services/api"
+import { TimelineId } from "@/Utils/timelineId/TimilineId"
 
 
 
@@ -34,7 +37,30 @@ export const FactsModal = ({ isOpen, onClose }: Props) => {
     resolver: yupResolver(schema)
   })
 
-  const addFacts = (data: Values) => console.log(data)
+  const addFacts = async (data: Values): Promise<void>=> {
+    const token = localStorage.getItem('jwt');
+    
+    const occurrenceToApi = {
+      "type": "relevant_fact",
+      "timelineId": TimelineId,
+      "title": data.title,
+      "content": data.description,
+    }
+
+    try { 
+      await api.post('/occurrence', occurrenceToApi, {
+        headers: {
+          Authorization: token,
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+        }
+      }) 
+      onClose()
+
+    } catch(error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 import { Modal } from "@/Utils/modalGlobal/ModalGlobal"
 import { ButtonsForms, Container, ContentForm } from "./styled"
 import { Button } from "@/Utils/button/Button"
@@ -6,7 +8,9 @@ import { Input } from "@/Utils/input/InputControl"
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from "react-hook-form"
-
+import api from "@/services/api"
+import { useState } from "react"
+import { TimelineId } from "@/Utils/timelineId/TimilineId"
 
 
 type Props = {
@@ -25,19 +29,49 @@ const schema = yup.object({
     .string()
     .required("O campo resumo da sessão é obrigatório!"),
   file: yup
-    .string()
-    .required("O campo anexar arquivo é obrigatório!")
+    .object()
 }).required()
 
 type Values = yup.InferType<typeof schema>
 
 export const AnnexModal = ({ isOpen, onClose }: Props) => {
+  const [files, setFiles] = useState<FileList | any>(null);
+
 
   const { handleSubmit, register, control, formState: { errors } } = useForm<Values>({
     resolver: yupResolver(schema)
-  })
+  });
 
-  const addAnnex = (data: Values) => console.log(data)
+  const addAnnex = async (data: Values): Promise<void> => {
+    const token = localStorage.getItem('jwt');
+
+    const occurrenceToApi = {
+      "type": "attachment",
+      "timelineId": TimelineId,
+      "title": data.title,
+      "content": data.resumeSession,
+      files: [
+        {
+          filename: files[0].name,
+          filesize: files[0].size
+        }
+      ]
+    }
+    console.log(files)
+    try {
+      await api.post('/occurrence', occurrenceToApi, {
+        headers: {
+          Authorization: token,
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+        }
+      })
+      onClose()
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -61,8 +95,9 @@ export const AnnexModal = ({ isOpen, onClose }: Props) => {
               {errors?.resumeSession && <div className="errorYup">{errors.resumeSession.message}</div>}
             </div>
             <div>
-              <Input type="file" name="fileUpload" className="annex" label="Anexar arquivos*" control={control} placeholder="Digite" />
-              {errors?.file && <div className="errorYup">{errors.file.message}</div>}
+              {/*  <Input type="file" value={files} onChange={(e) => setFiles(e.target.files)} name="fileUpload" className="annex" label="Anexar arquivos*" control={control} placeholder="Digite" />
+              {errors?.file && <div className="errorYup">{errors.file.message}</div>}  */}
+              <input type="file" name="fileUpload" onChange={(e) => { setFiles(e.target.files) }} />
             </div>
             <ButtonsForms>
               <div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 
 import { Control, useController } from "react-hook-form"
@@ -11,14 +12,15 @@ type Props = {
     id?: string;
     type: string;
     className?: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     control: Control<any>;
+    value?: never[];
+    onChange?: (() => void) | any
 }
 
 export const Input = ({ label, placeholder, name, id = name, type, className, control}: Props) => {
 
     const {
-        field: {ref, ...props},
+        field: {ref, value, onChange, ...props},
     
     } = useController({name, control})
     
@@ -30,6 +32,8 @@ export const Input = ({ label, placeholder, name, id = name, type, className, co
             className={className}
             type ={type}
             ref={ref} 
+            onChange={onChange}
+            value={value}
             {...props} 
             />
         </ContainerInput>
